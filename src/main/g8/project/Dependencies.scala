@@ -1,6 +1,14 @@
 import sbt._
 
 object Dependencies {
+
+  object dev {
+    object zio {
+      val version = "2.1.6"
+      val zio = "dev.zio" %% "zio" % version
+    }
+  }
+
   object com {
     object eed3si9n {
       object expecty {

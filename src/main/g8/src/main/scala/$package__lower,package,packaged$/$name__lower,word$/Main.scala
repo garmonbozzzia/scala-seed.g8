@@ -1,12 +1,17 @@
 package $package;format="lower,package"$
 package $name;format="lower,word"$
 
-object Main {
-  def main(args: Array[String]): Unit = {
-    println("─" * 100)
+import zio._
+import zio.Console._
 
-    println("hello world")
+object Main extends ZIOAppDefault {
 
-    println("─" * 100)
-  }
+  def run = myAppLogic
+
+  val myAppLogic =
+    for {
+      _    <- printLine("Hello! What is your name?")
+      name <- readLine
+      _    <- printLine(s"Hello, ${name}, welcome to ZIO!")
+    } yield ()
 }

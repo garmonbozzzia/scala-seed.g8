@@ -72,6 +72,7 @@ lazy val autoImportSettings = Seq(
 lazy val dependencies = Seq(
   libraryDependencies ++= Seq(
     // main dependencies
+    dev.zio.zio
   ),
   libraryDependencies ++= Seq(
     com.eed3si9n.expecty.expecty,
